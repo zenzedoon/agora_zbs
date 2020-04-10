@@ -17,7 +17,8 @@ RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
 RUN mkdir -p /var/www/html && \
 	 cd /var/www/html && \
-	wget -O agora.zip https://www.agora-project.net/divers/download.php && \
+#	wget -O agora.zip https://www.agora-project.net/divers/download.php && \
+  wget -O agora.zip https://github.com/xech/agora-project/archive/master.zip && \
 	unzip agora.zip
 
 RUN chown -R www-data:www-data /var/www/html
