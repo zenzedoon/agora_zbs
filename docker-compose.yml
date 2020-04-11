@@ -1,0 +1,25 @@
+version: "3.2"
+
+services:
+#Mysql Container
+  mysql:
+    image: mysql:5.7.23
+    container_name: mysql
+    hostname: mysql
+    volumes:
+      - ./mysql:/var/lib/mysql
+    env_file:
+      - ./mysql.env
+    restart: always
+
+#GLPI Container
+  agora:
+    image: zenzedoon/agora_zbs:v02
+    container_name : agora
+    hostname: agora
+    ports:
+      - "80:80"
+    volumes:
+     - ./agora-web:rw:/var/www/html/agora-web/DATAS/modFile:rw
+#      - ./agora-files:
+    restart: always
