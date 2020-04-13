@@ -20,6 +20,5 @@ services:
     ports:
       - "80:80"
     volumes:
-     - ./agora-web:rw:/var/www/html/agora-web/DATAS/modFile:rw
-#      - ./agora-files:
+     - ./agora-web:/var/www/html/agora-web/DATAS/modFile
     restart: always
